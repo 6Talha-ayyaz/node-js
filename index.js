@@ -17,9 +17,9 @@ const Person = mongoose.model('Person', PersonSchema);
 
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log("DB connected"))
-  .catch(() => console.log("DB connect failed"));
+  .catch(() => console.log("DB failed"));
 
-app.post("/", (req, res) => {
+app.post("/api", (req, res) => {
   const p1 = new Person({
     name: req.body.name,
     age: req.body.age
@@ -30,7 +30,7 @@ app.post("/", (req, res) => {
     .catch(err => res.json(err));
 });
 
-app.get("/:input", (req, res) => {
+app.get("/api/:input", (req, res) => {
   const input = req.params.input;
 
   if (!isNaN(input)) {
@@ -43,5 +43,9 @@ app.get("/:input", (req, res) => {
       .catch(err => res.json(err));
   }
 });
+
+if (process.env.NODE_ENV !== "production") {
+  app.listen(8080, () => console.log("local server running"));
+}
 
 module.exports = app;

@@ -1,26 +1,15 @@
 {
-  "name": "6talha-ayyaz.github.io",
+  "name": "node-js",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
+  "type": "commonjs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
     "dev": "nodemon index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/6Talha-ayyaz/6Talha-ayyaz.github.io.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/6Talha-ayyaz/6Talha-ayyaz.github.io/issues"
-  },
-  "homepage": "https://github.com/6Talha-ayyaz/6Talha-ayyaz.github.io#readme",
   "dependencies": {
-    "mongoose": "^9.0.2"
+    "express": "^4.18.2",
+    "mongoose": "^9.0.2",
+    "dotenv": "^16.4.5"
   }
 }
