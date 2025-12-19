@@ -52,6 +52,12 @@ app.get("/api/:input", (req, res) => {
       .catch(err => res.json(err));
   }
 });
+app.get("/api/get-persons", (req, res) => {
+  Person.find()
+    .then(result => res.json(result))
+    .catch(err => res.json(err));
+});
+
 
 if (process.env.NODE_ENV !== "production") {
   app.listen(8080, () => console.log("local server running"));
