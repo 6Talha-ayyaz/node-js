@@ -52,8 +52,8 @@ app.get("/api/:input", (req, res) => {
       .catch(err => res.json(err));
   }
 });
-app.get("/api/get-persons", (req, res) => {
-  Person.find()
+app.get("/get-persons", (req, res) => {
+     Person.find()
     .then(result => res.json(result))
     .catch(err => res.json(err));
 });
