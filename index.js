@@ -10,7 +10,9 @@ app.use(express.static("public"));
 
 const PersonSchema = new mongoose.Schema({
   name: String,
-  age: Number
+  age: Number,
+  gender: String,
+  Iname: String
 });
 
 const Person = mongoose.model('Person', PersonSchema);
@@ -22,7 +24,9 @@ mongoose.connect(process.env.MONGODB_URI)
 app.post("/api", (req, res) => {
   const p1 = new Person({
     name: req.body.name,
-    age: req.body.age
+    age: req.body.age,
+    gender:req.body.gender,
+    Iname:req.body.Iname
   });
 
   p1.save()
@@ -33,6 +37,7 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "/public/add.html");
 });
 
+//you can search using age or Institute name
 
 app.get("/api/:input", (req, res) => {
   const input = req.params.input;
@@ -42,7 +47,7 @@ app.get("/api/:input", (req, res) => {
       .then(result => res.json(result))
       .catch(err => res.json(err));
   } else {
-    Person.find({ name: { $regex: new RegExp(input, "i") } })
+    Person.find({ Iname: { $regex: new RegExp(input, "i") } })
       .then(result => res.json(result))
       .catch(err => res.json(err));
   }
