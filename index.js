@@ -29,6 +29,10 @@ app.post("/api", (req, res) => {
     .then(result => res.json(result))
     .catch(err => res.json(err));
 });
+app.get("/", (req, res) => {
+  res.sendFile(__dirname + "/public/add.html");
+});
+
 
 app.get("/api/:input", (req, res) => {
   const input = req.params.input;
