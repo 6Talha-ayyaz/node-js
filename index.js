@@ -52,6 +52,10 @@ app.get("/api/:input", (req, res) => {
       .catch(err => res.json(err));
   }
 });
+
+
+//to get all the data in database
+
 app.get("/get-persons", (req, res) => {
      Person.find()
     .then(result => res.json(result))
