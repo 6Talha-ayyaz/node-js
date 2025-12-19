@@ -6,8 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
-    "dev":"nodemon index.js"
-    
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -20,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/6Talha-ayyaz/6Talha-ayyaz.github.io/issues"
   },
-  "homepage": "https://github.com/6Talha-ayyaz/6Talha-ayyaz.github.io#readme"
+  "homepage": "https://github.com/6Talha-ayyaz/6Talha-ayyaz.github.io#readme",
+  "dependencies": {
+    "mongoose": "^9.0.2"
+  }
 }
